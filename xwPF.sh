@@ -8,8 +8,17 @@ INSTALL_DIR="/usr/local/bin"
 LIB_DIR="$INSTALL_DIR/lib"
 SHORTCUT_PATH="/usr/local/bin/pf"
 
-# 仓库地址
-REPO_RAW_URL="https://raw.githubusercontent.com/zywe03/realm-xwPF/main"
+# 加速源前缀：留空为直连；网络受限时可设为 https://v6.gh-proxy.org/ 等代理
+# 用法示例（一键安装时一并让内部下载走加速）：
+#   wget -qO- https://v6.gh-proxy.org/https://raw.githubusercontent.com/zywe03/realm-xwPF/main/xwPF.sh | GH_PROXY="https://v6.gh-proxy.org/" sudo bash -s install
+# 已安装后临时启用：
+#   GH_PROXY="https://v6.gh-proxy.org/" pf
+GH_PROXY="${GH_PROXY:-}"
+
+# 仓库地址（脚本/模块原始文件，可经加速源前缀）
+REPO_RAW_URL="${GH_PROXY}https://raw.githubusercontent.com/zywe03/realm-xwPF/main"
+# realm 官方发布地址（版本检测与二进制下载，可经加速源前缀）
+REALM_RELEASE_BASE="${GH_PROXY}https://github.com/zhboner/realm/releases"
 
 # 模块列表（加载顺序）
 LIB_FILES=("core.sh" "rules.sh" "server.sh" "realm.sh" "ui.sh")

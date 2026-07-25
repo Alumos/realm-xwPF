@@ -88,9 +88,18 @@ wget -qO- https://raw.githubusercontent.com/zywe03/realm-xwPF/main/xwPF.sh | sud
 ### 网络受限使用加速源,一键安装
 
 ```bash
-wget -qO- https://v6.gh-proxy.org/https://raw.githubusercontent.com/zywe03/realm-xwPF/main/xwPF.sh | sudo bash -s install
+wget -qO- https://v6.gh-proxy.org/https://raw.githubusercontent.com/zywe03/realm-xwPF/main/xwPF.sh | sudo bash -c 'GH_PROXY="https://v6.gh-proxy.org/" bash -s install'
 ```
-若加速源失效，可多次重试或更换其他具有内置加速功能的代理源
+> 说明：上面的 `GH_PROXY="..."` 会一并注入安装过程，**连脚本内部的下载（lib 模块、realm 二进制、按需下载的 xwFailover/speedtest/port-traffic-dog/OCR 脚本、流量狗通知模块等）也会走加速源**，不再是只加速主脚本本身。
+
+若加速源失效，可多次重试或更换其他具有内置加速功能的代理源（如 `https://gh-proxy.org/`、`https://ghproxy.net/` 等），并相应替换命令中的 `GH_PROXY` 前缀。
+
+已安装后想临时启用加速（仅本次会话生效）：
+```bash
+GH_PROXY="https://v6.gh-proxy.org/" pf
+# 或针对端口流量狗：
+GH_PROXY="https://v6.gh-proxy.org/" dog
+```
 
 ## 无法联网的离线安装
 

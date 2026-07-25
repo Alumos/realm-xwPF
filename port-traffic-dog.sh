@@ -18,7 +18,11 @@ readonly NC='\033[0m'
 # 网络超时设置
 readonly SHORT_CONNECT_TIMEOUT=5
 readonly SHORT_MAX_TIMEOUT=7
-readonly SCRIPT_URL="https://raw.githubusercontent.com/zywe03/realm-xwPF/main/port-traffic-dog.sh"
+# 加速源前缀：留空为直连；网络受限时通过环境变量 GH_PROXY 指定，如 https://v6.gh-proxy.org/
+GH_PROXY="${GH_PROXY:-}"
+readonly REPO_RAW_BASE="${GH_PROXY}https://raw.githubusercontent.com/zywe03/realm-xwPF/main"
+readonly REPO_ARCHIVE_BASE="${GH_PROXY}https://github.com/zywe03/realm-xwPF"
+readonly SCRIPT_URL="$REPO_RAW_BASE/port-traffic-dog.sh"
 readonly SHORTCUT_COMMAND="dog"
 
 detect_system() {
@@ -2361,7 +2365,7 @@ download_with_sources() {
 download_notification_modules() {
     local notifications_dir="$CONFIG_DIR/notifications"
     local temp_dir=$(mktemp -d)
-    local repo_url="https://github.com/zywe03/realm-xwPF/archive/refs/heads/main.zip"
+    local repo_url="$REPO_ARCHIVE_BASE/archive/refs/heads/main.zip"
 
     # 下载解压复制清理：每次都覆盖更新确保版本一致
     if download_with_sources "$repo_url" "$temp_dir/repo.zip" &&
