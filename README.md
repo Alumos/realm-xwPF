@@ -72,7 +72,7 @@ DTAG
  ⬇️ UDP下行 │ 10.0 Mbps (1.2 MB/s)      │ 0/26335 (0%)              │ 0.040 ms                 
 
 ─────────────────────────────────────────────────────────────────
-测试完成时间: 2025-08-28 20:12:29 | 脚本开源地址：https://github.com/zywe03/realm-xwPF
+测试完成时间: 2025-08-28 20:12:29 | 脚本开源地址：https://github.com/Alumos/realm-xwPF
 ```
 
 </details>
@@ -82,13 +82,13 @@ DTAG
 ### 一键安装
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/zywe03/realm-xwPF/main/xwPF.sh | sudo bash -s install
+wget -qO- https://raw.githubusercontent.com/Alumos/realm-xwPF/main/xwPF.sh | sudo bash -s install
 ```
 
 ### 网络受限使用加速源,一键安装
 
 ```bash
-wget -qO- https://v6.gh-proxy.org/https://raw.githubusercontent.com/zywe03/realm-xwPF/main/xwPF.sh | sudo bash -c 'GH_PROXY="https://v6.gh-proxy.org/" bash -s install'
+wget -qO- https://v6.gh-proxy.org/https://raw.githubusercontent.com/Alumos/realm-xwPF/main/xwPF.sh | sudo bash -c 'GH_PROXY="https://v6.gh-proxy.org/" bash -s install'
 ```
 > 说明：上面的 `GH_PROXY="..."` 会一并注入安装过程，**连脚本内部的下载（lib 模块、realm 二进制、按需下载的 xwFailover/speedtest/port-traffic-dog/OCR 脚本、流量狗通知模块等）也会走加速源**，不再是只加速主脚本本身。
 
@@ -110,8 +110,8 @@ GH_PROXY="https://v6.gh-proxy.org/" dog
 
 **1. 在有网络的设备上下载以下文件**
 
-- **主脚本**：[xwPF.sh](https://github.com/zywe03/realm-xwPF/raw/main/xwPF.sh)
-- **模块文件**（全部需要）：https://github.com/zywe03/realm-xwPF/tree/main/lib
+- **主脚本**：[xwPF.sh](https://github.com/Alumos/realm-xwPF/raw/main/xwPF.sh)
+- **模块文件**（全部需要）：https://github.com/Alumos/realm-xwPF/tree/main/lib
 
 - **Realm 程序**（根据系统架构选择）：
 
@@ -382,13 +382,13 @@ MPTCP（启用MPTCP时创建）
 
 ## 🤝 技术支持
 
-- **其他开源项目：** [https://github.com/zywe03](https://github.com/zywe03)
+- **其他开源项目：** [https://github.com/Alumos](https://github.com/Alumos)
 - **介绍主页：** [https://zywe.de](https://zywe.de)
-- **问题反馈：** [GitHub Issues](https://github.com/zywe03/realm-xwPF/issues)
+- **问题反馈：** [GitHub Issues](https://github.com/Alumos/realm-xwPF/issues)
 - **纯闲聊群** [tg交流群](https://t.me/zywe_chat) 
 
 ---
 
 **⭐ 如果这个项目对您有帮助，请给个 Star 支持一下！**
 
-[![Star History Chart](https://api.star-history.com/svg?repos=zywe03/realm-xwPF&type=Date)](https://www.star-history.com/#zywe03/realm-xwPF&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Alumos/realm-xwPF&type=Date)](https://www.star-history.com/#Alumos/realm-xwPF&Date)
